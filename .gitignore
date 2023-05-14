@@ -21,9 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #customn
-img/
-.png
-.jpeg
-.jpg
 .zip
-.gif 
