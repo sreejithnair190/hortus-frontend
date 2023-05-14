@@ -1,0 +1,35 @@
+.plants-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px; 
+}
+
+.plant-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.plant-card {
+  width: calc(
+    25% - 20px
+  ); 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .plant-cards {
+    flex-direction: column;
+  }
+
+  .plant-card {
+    width: 100%;
+  }
+}
