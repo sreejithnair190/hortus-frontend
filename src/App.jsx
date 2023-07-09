@@ -1,9 +1,11 @@
+// import dotenv from 'dotenv';
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/home/navbar/navbar";
 import Plants from "./components/plants/plants";
-import "./assets/css/app.css"
+import "./app.css"
 import Categories from "./components/home/category/categories";
 
+// require('dotenv').config()
 
 function App() {
   return (
