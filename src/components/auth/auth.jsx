@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import "./auth.css";
+import FormInput from "../utils/formInput/formInput";
 import "./form.css";
+import Button from "../utils/button/button";
 
 const SignIn = () => {
   const defaultFormFields = {
@@ -10,7 +11,6 @@ const SignIn = () => {
   };
 
   const [formFields, setFormFields] = useState(defaultFormFields);
-  // const { email, password } = formFields;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +27,7 @@ const SignIn = () => {
       if (response.status === 200) {
         const data = response.data;
         console.log(data.token);
-        alert(data.status)
+        alert(data.status);
       }
       console.log(response);
     } catch (error) {
@@ -38,32 +38,30 @@ const SignIn = () => {
   };
 
   return (
-    <form method="post" className="form">
-      <p className="title">Login</p>
-      <label>
-        <input
-          required
-          placeholder="Email"
-          type="email"
-          className="input"
-          name="email"
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        <input
-          required
-          placeholder="Password"
-          type="password"
-          className="input"
-          name="password"
-          onChange={handleChange}
-        />
-      </label>
-      <button className="submit" onClick={handleClick}>
-        Submit
-      </button>
-      <p className="signin">
+    <form method="post" className="auth-form">
+      <p className="title">Sign In</p>
+      <FormInput
+        required
+        placeholder="Email"
+        type="email"
+        className="input"
+        name="email"
+        onChange={handleChange}
+      />
+      <FormInput
+        required
+        placeholder="Password"
+        type="password"
+        className="input"
+        name="password"
+        onChange={handleChange}
+      />
+      <Button
+        label='Submit'
+        className='submit'
+        onClick= {handleClick}
+      />
+      <p className="auth-info">
         Don't have an acount? <a href="#">Sign Up</a>
       </p>
     </form>
@@ -72,7 +70,7 @@ const SignIn = () => {
 
 const Auth = () => {
   return (
-    <div className="auth">
+    <div className="form-container">
       <SignIn />
     </div>
   );
