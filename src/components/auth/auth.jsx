@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import FormInput from "../utils/formInput/formInput";
 import Button from "../utils/button/button";
@@ -85,7 +85,7 @@ const SignUp = () => {
       />
       <Button label="Submit" className="submit" type="submit" />
       <p className="auth-info">
-        Already have an acount? <a href="/auth/sign-in">Sign In</a>
+        Already have an acount?&nbsp;<Link to='/auth/sign-in'>Sign In</Link>
       </p>
     </form>
   );
@@ -152,7 +152,7 @@ const SignIn = () => {
       />
       <Button label="Submit" className="submit" type="submit" />
       <p className="auth-info">
-        Don't have an acount? <a href="/auth/sign-up">Sign Up</a>
+        Don't have an acount?&nbsp;<Link to='/auth/sign-up'>Sign Up</Link>
       </p>
     </form>
   );
