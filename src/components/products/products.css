@@ -1,4 +1,4 @@
-.plants-container {
+.products-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -12,7 +12,7 @@
   gap: 20px;
 }
 
-.plant-card {
+.product-card {
   width: calc(
     25% - 20px
   ); 
@@ -29,7 +29,7 @@
     flex-direction: column;
   }
 
-  .plant-card {
+  .product-card {
     width: 100%;
   }
 }
