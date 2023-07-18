@@ -6,10 +6,9 @@ const Categories = () => {
     <Fragment>
         <div className='categories-container'>
           <Link className="category plants-category" to='/plants'>Plants</Link>
-          <Link className="category plants-category" to='/'>Seeds</Link>
-          <Link className="category plants-category" to='/'>Soils</Link>
-          <Link className="category plants-category" to='/'>Flowers</Link>
-          <Link className="category plants-category" to='/'>Fertilizers</Link>
+          <Link className="category plants-category" to='/seeds'>Seeds</Link>
+          <Link className="category plants-category" to='/fertilizers'>Fertilizers</Link>
+          <Link className="category plants-category" to='/accessories'>Accessories</Link>
         </div>
     </Fragment>
   )
