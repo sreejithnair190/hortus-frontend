@@ -3,6 +3,7 @@ import Navbar from "./components/home/navbar/navbar";
 import Plants from "./components/plants/plants";
 import Categories from "./components/home/category/categories";
 import Auth from "./components/auth/auth";
+
 import "./app.css"
 
 function App() {
