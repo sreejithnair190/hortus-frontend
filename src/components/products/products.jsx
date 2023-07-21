@@ -1,15 +1,28 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, Fragment } from "react";
+import "./products.scss"
 
 const ProductList = ({ productItem }) => {
   const { name, description, price } = productItem;
   return (
-    <div className="product-card">
-      <h2>{name}</h2>
-      <p>{description}</p>
-      <p>Price: ${price}</p>
-    </div>
+    <Fragment>
+      <div className="product__photo">
+        <div className="photo-container">
+          <div className="photo-main">
+            <img src="img/test.png" alt={name} />
+          </div>
+        </div>
+      </div>
+      <div className="product__info">
+        <div className="title">
+          <h4>{name}</h4>
+        </div>
+        <div className="price">
+          <span>${price}</span>
+        </div>
+        <button className="buy--btn show--details">Show More Details</button>
+      </div>
+    </Fragment>
   );
 }
 
@@ -35,15 +48,14 @@ const Products = ({ productName }) => {
   }, []);
 
   return (
-    <div className="products">
-      <h3>{productName.charAt(0).toUpperCase() + productName.slice(1)}</h3>
-      <div className="products-container">
+    <div className="products-container">
         {products.length > 0
           ? products.map((product) => (
-              <ProductList key={product._id} productItem={product} />
+              <div className="product">
+                <ProductList key={product._id} productItem={product} />
+              </div>
             ))
           : console.log("No Products Found")}
-      </div>
     </div>
   );
 };
