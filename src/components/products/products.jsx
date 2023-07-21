@@ -11,27 +11,15 @@ const ProductList = ({ productItem }) => {
           <div className="photo-main">
             <img src="img/test.png" alt={name} />
           </div>
-          {/* <div className="photo-album">
-            <ul>
-              <li><img src="img/test.png" alt={name} /></li>
-              <li><img src="img/test.png" alt={name} /></li>
-              <li><img src="img/test.png" alt={name} /></li>
-              <li><img src="img/test.png" alt={name} /></li>
-            </ul>
-          </div> */}
         </div>
       </div>
       <div className="product__info">
         <div className="title">
-          <h1>{name}</h1>
+          <h4>{name}</h4>
         </div>
         <div className="price">
-          $ <span>{price}</span>
+          <span>${price}</span>
         </div>
-        {/* <div className="description">
-          <h3>Description</h3>
-          <p>{description}</p>
-        </div> */}
         <button className="buy--btn show--details">Show More Details</button>
       </div>
     </Fragment>
@@ -61,14 +49,13 @@ const Products = ({ productName }) => {
 
   return (
     <div className="products-container">
-      <div className="product">
-        {products.length > 0 ?<ProductList productItem={products[0]} /> : console.log("No product found")}
-        {/* {products.length > 0
+        {products.length > 0
           ? products.map((product) => (
-              <ProductList key={product._id} productItem={product} />
+              <div className="product">
+                <ProductList key={product._id} productItem={product} />
+              </div>
             ))
-          : console.log("No Products Found")} */}
-      </div>
+          : console.log("No Products Found")}
     </div>
   );
 };
