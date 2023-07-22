@@ -1,0 +1,36 @@
+.form-container {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 500px;
+  height: 500px;
+  background-color: #e3e3e3;
+  padding: 50px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.auth-info {
+  font-size: 14px;
+}
+
+.auth-info a:hover {
+  text-decoration: underline #55c57a;
+}
