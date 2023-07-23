@@ -1,27 +1,48 @@
-.navbar-container {
+.nav {
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border: 1px solid red;
 }
 
-.hortus-logo {
-  text-decoration: none;
+.nav__logo {
+  color: var(--title-color);
 }
 
-.logo {
-  height: 2rem;
-  width: 2rem;
+.nav__logo {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: x-large;
+  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  transition: 0.3s;
 }
 
-.nav-links {
+.nav__logo-icon {
+  font-size: larger;
+  color: var(--first-color);
+}
+
+.nav__logo:hover {
+  color: var(--first-color);
+}
+
+.nav__list {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
-.nav-link {
-  text-decoration: none;
+.nav__link {
+  color: var(--title-color);
+  font-size: larger;
+  font-weight: var(--font-medium);
+  transition: 0.3s;
 }
 
-
+.nav__link:hover {
+    position: relative;
+    color: var(--first-color);
+}

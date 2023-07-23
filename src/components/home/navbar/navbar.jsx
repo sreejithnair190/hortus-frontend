@@ -1,9 +1,7 @@
 import { React, Fragment, useContext } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { UserContext } from '../../context/user.context'
-// import './navbar.css'
-import "./navbar.scss";
-
+import './navbar.css'
 
 const Navbar = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
