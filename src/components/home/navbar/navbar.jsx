@@ -42,15 +42,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item">
-              <Link className="nav__link active-link" to="/">
+            {
+              currentUser 
+                ? (<span className="nav__link" onClick={handleSignOut}>Sign Out</span>)
+                : isSignIn 
+                  ? (<Link className="nav__link" to='/auth/sign-up'>Sign Up</Link>)
+                  : (<Link className="nav__link" to='/auth/sign-in'>Sign In</Link>) 
+            }
+              {/* <Link className="nav__link active-link" to="/">
                 Login
-              </Link>
+              </Link> */}
             </li>
-            {/* {
-            currentUser 
-            ? (isHome && <span className="nav-link" onClick={handleSignOut}>Sign Out</span>)
-            : (isHome && <Link className="nav-link" to='/auth/sign-in'>Sign In</Link>)
-          } */}
           </ul>
         </div>
       </nav>
