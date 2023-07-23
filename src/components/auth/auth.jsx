@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import FormInput from "../utils/formInput/formInput";
 import Button from "../utils/button/button";
+import { UserContext } from "../context/user.context";
 import "./form.css";
 
 const SignUp = () => {
@@ -14,6 +15,7 @@ const SignUp = () => {
   };
 
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const { setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -32,11 +34,8 @@ const SignUp = () => {
       if (response.status === 201) {
         const data = response.data;
         if (data.token) {
-          localStorage.setItem("jwtToken", data.token);
-          if (localStorage.getItem("jwtToken")) {
-            alert("Account Registered Successfully");
-            navigate("/");
-          }
+          setCurrentUser(data);
+          navigate("/")
         } else {
           alert("Something went wrong. Please try again later.");
         }
@@ -98,6 +97,7 @@ const SignIn = () => {
   };
 
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const { setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -115,11 +115,8 @@ const SignIn = () => {
       if (response.status === 200) {
         const data = response.data;
         if (data.token) {
-          localStorage.setItem("jwtToken", data.token);
-          if (localStorage.getItem("jwtToken")) {
-            alert("Successfully Logged In.");
-            navigate("/");
-          }
+          setCurrentUser(data);
+          navigate("/");
         } else {
           alert("Something went wrong. Please try again later.");
         }
